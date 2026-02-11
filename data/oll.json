@@ -1,0 +1,90 @@
+[
+  {
+    "id": "oll-edges-dot",
+    "name": "OLL Edges: Dot",
+    "description": "Use when: No top-layer edges have yellow facing up -- you see only a yellow center dot. This is the worst edge case. Apply this to go directly to a yellow cross. Hold the cube in any orientation.",
+    "algorithm": "F R U R' U' F' f R U R' U' f'",
+    "setupMoves": "f U R U' R' f' F U R U' R' F'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 0, 1, 0, 0, 0, 0]
+    }
+  },
+  {
+    "id": "oll-edges-l-shape",
+    "name": "OLL Edges: L-Shape",
+    "description": "Use when: Exactly two adjacent edges have yellow on top, forming an L-shape (like a backward L in the back-left). Hold the cube so the two yellow edges point to the LEFT and BACK (9 o'clock position). Then apply this to get a full yellow cross.",
+    "algorithm": "F R U R' U' F'",
+    "setupMoves": "F U R U' R' F'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 1, 1, 0, 0, 1, 0]
+    }
+  },
+  {
+    "id": "oll-edges-line",
+    "name": "OLL Edges: Line",
+    "description": "Use when: Exactly two opposite edges have yellow on top, forming a straight line. Hold the cube so the line runs LEFT to RIGHT (horizontal). Then apply this to get a full yellow cross.",
+    "algorithm": "f R U R' U' f'",
+    "setupMoves": "f U R U' R' f'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 1, 1, 1, 0, 0, 0]
+    }
+  },
+  {
+    "id": "oll-corners-sune",
+    "name": "OLL Corners: Sune",
+    "description": "Use when: You have a yellow cross on top and exactly ONE corner has yellow on top. Hold the cube so the solved corner is in the FRONT-LEFT position. The classic 'Sune' algorithm orients the other three corners.",
+    "algorithm": "R U R' U R U2 R'",
+    "setupMoves": "R U2 R' U' R U' R'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 1, 1, 1, 1, 1, 0, 1, 0]
+    }
+  },
+  {
+    "id": "oll-corners-antisune",
+    "name": "OLL Corners: Anti-Sune",
+    "description": "Use when: You have a yellow cross and exactly ONE corner has yellow on top, but the surrounding pattern is the mirror of Sune. Hold the solved corner in the FRONT-RIGHT. This is the reverse of Sune.",
+    "algorithm": "R U2 R' U' R U' R'",
+    "setupMoves": "R U R' U R U2 R'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 0, 1, 1, 1, 0, 1, 0]
+    }
+  },
+  {
+    "id": "oll-corners-headlights",
+    "name": "OLL Corners: Headlights",
+    "description": "Use when: You have a yellow cross and exactly TWO corners oriented, and they're on the SAME SIDE (adjacent). Hold the cube so the two solved corners are at the BACK. This fixes the front two corners.",
+    "algorithm": "R2 D R' U2 R D' R' U2 R'",
+    "setupMoves": "R U2 R D R' U2 R D' R2",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 0, 1, 0]
+    }
+  },
+  {
+    "id": "oll-corners-chameleon",
+    "name": "OLL Corners: Chameleon",
+    "description": "Use when: You have a yellow cross and exactly TWO corners oriented, but they're on DIAGONAL opposites (not the same side). Any holding angle works since the pattern is symmetrical.",
+    "algorithm": "r U R' U' r' F R F'",
+    "setupMoves": "F R' F' r U R U' r'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 0, 1, 1, 1, 0, 1, 1]
+    }
+  },
+  {
+    "id": "oll-corners-bowtie",
+    "name": "OLL Corners: Bowtie",
+    "description": "Use when: You have a yellow cross but NO corners have yellow on top (all four corners are twisted). Apply Sune once -- this will give you a one-corner case, then apply Sune or Anti-Sune again to finish.",
+    "algorithm": "R U R' U R U' R' U R U2 R'",
+    "setupMoves": "R U2 R' U' R U R' U' R U' R'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 1, 0, 1, 1, 1, 0, 1, 0]
+    }
+  }
+]

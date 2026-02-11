@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross - Learn CFOP</title>
+  <meta name="description" content="Learn to solve the white cross efficiently as the first step of CFOP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cube-viewer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Learn <span>CFOP</span></a>
+    <div class="nav__links">
+      <a href="cross.html" class="nav__link nav__link--active">Cross</a>
+      <a href="f2l.html" class="nav__link">F2L</a>
+      <a href="oll.html" class="nav__link">OLL</a>
+      <a href="pll.html" class="nav__link">PLL</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav__mobile-menu" id="mobile-menu">
+    <a href="cross.html" class="nav__link nav__link--active">Cross</a>
+    <a href="f2l.html" class="nav__link">F2L</a>
+    <a href="oll.html" class="nav__link">OLL</a>
+    <a href="pll.html" class="nav__link">PLL</a>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-header__title">Cross</h1>
+        <p class="page-header__description">
+          The first step of CFOP: solve four white edge pieces on the bottom face,
+          aligned with their matching center colors. Aim for 8 moves or fewer.
+        </p>
+        <div class="progress-bar" style="margin-top: var(--space-md); max-width: 300px;">
+          <div class="progress-bar__fill" id="page-progress"></div>
+        </div>
+      </div>
+
+      <section class="step-guide">
+        <h2 class="step-guide__heading">When do I do this?</h2>
+        <p class="step-guide__text">
+          The cross is always the <strong>very first thing you solve</strong> on a scrambled cube.
+          Hold the cube with the white center on the bottom. Your goal is to place all four
+          white edge pieces on the bottom face so that each edge's second color also matches
+          the adjacent center (e.g., the white-red edge sits between the white and red centers).
+        </p>
+        <h2 class="step-guide__heading">How do I recognize what to do?</h2>
+        <p class="step-guide__text">
+          Look at where each white edge currently is. It could be in the top layer, middle layer,
+          or bottom layer, and it might be flipped. Each situation below shows a common case and
+          the moves to fix it. The cross is mostly intuitive -- these examples teach you the
+          patterns, but with practice you'll plan the entire cross during inspection.
+        </p>
+      </section>
+
+      <div class="card-grid" id="algorithm-list" data-step="cross"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Learn CFOP &mdash; An interactive Rubik's cube tutorial</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

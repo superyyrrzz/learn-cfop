@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLL - Learn CFOP</title>
+  <meta name="description" content="Learn 2-look PLL algorithms for permuting the last layer in CFOP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cube-viewer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Learn <span>CFOP</span></a>
+    <div class="nav__links">
+      <a href="cross.html" class="nav__link">Cross</a>
+      <a href="f2l.html" class="nav__link">F2L</a>
+      <a href="oll.html" class="nav__link">OLL</a>
+      <a href="pll.html" class="nav__link nav__link--active">PLL</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav__mobile-menu" id="mobile-menu">
+    <a href="cross.html" class="nav__link">Cross</a>
+    <a href="f2l.html" class="nav__link">F2L</a>
+    <a href="oll.html" class="nav__link">OLL</a>
+    <a href="pll.html" class="nav__link nav__link--active">PLL</a>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-header__title">PLL -- Permute Last Layer</h1>
+        <p class="page-header__description">
+          Permute all last layer pieces to their correct positions and solve the cube.
+          Start with 2-look PLL (corners first, then edges).
+        </p>
+        <div class="progress-bar" style="margin-top: var(--space-md); max-width: 300px;">
+          <div class="progress-bar__fill" id="page-progress"></div>
+        </div>
+      </div>
+
+      <section class="step-guide">
+        <h2 class="step-guide__heading">When do I do this?</h2>
+        <p class="step-guide__text">
+          After OLL is complete. The entire top face is yellow, but the side colors of the top layer
+          pieces are likely in the wrong positions. PLL rearranges them without disturbing the yellow
+          orientation, completing the solve.
+        </p>
+        <h2 class="step-guide__heading">2-Look PLL: How it works</h2>
+        <p class="step-guide__text">
+          Instead of learning all 21 PLL cases, beginners use two steps:
+        </p>
+        <ol class="step-guide__list">
+          <li><strong>Step 1 -- Permute corners:</strong> Look at the side colors of the four top-layer
+          corners. Check if any pair of adjacent corners have matching side colors ("headlights").
+          If you find one matching pair, hold them at the back and use a corner-swap algorithm.
+          If no pair matches, apply the Y-perm from any angle to fix the diagonals.</li>
+          <li><strong>Step 2 -- Permute edges:</strong> The corners are now all correct. Look at the edges.
+          Either three edges need to cycle (Ua or Ub perm, depending on the cycle direction),
+          or two pairs of opposite edges need to swap (H-perm). If only one edge is wrong, do a U turn
+          to check again.</li>
+        </ol>
+        <h2 class="step-guide__heading">How do I recognize the pattern?</h2>
+        <p class="step-guide__text">
+          For corners: rotate the top layer until you find a side where both top corners match
+          each other's color. These are "headlights." If headlights exist, hold them at the back.
+          For edges: after corners are solved, look at which edges need to move and in which direction.
+        </p>
+      </section>
+
+      <div class="tier-toggle" id="tier-toggle">
+        <button class="tier-toggle__btn tier-toggle__btn--active" data-tier="beginner">2-Look PLL</button>
+        <button class="tier-toggle__btn" data-tier="full">Full PLL (21)</button>
+      </div>
+
+      <div class="card-grid" id="algorithm-list" data-step="pll"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Learn CFOP &mdash; An interactive Rubik's cube tutorial</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

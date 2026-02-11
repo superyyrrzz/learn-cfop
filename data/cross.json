@@ -1,0 +1,46 @@
+[
+  {
+    "id": "cross-daisy",
+    "name": "Daisy Method",
+    "description": "Use when: You're starting a scrambled cube and white edges are scattered. Look for white edges anywhere on the cube and bring them to surround the yellow center on top (forming a 'daisy'), then flip each one down to the bottom by aligning it with the matching center and doing F2.",
+    "algorithm": "F2 D R' D'",
+    "setupMoves": "D R D' F2",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 1, 0, 1, 0, 1, 0, 1, 0]
+    }
+  },
+  {
+    "id": "cross-edge-flip",
+    "name": "Edge Flip in Place",
+    "description": "Use when: A white edge is in the correct bottom-layer position but the white sticker faces down instead of to the side (or vice versa). The edge is in its slot but flipped wrong. This sequence takes it out, flips it, and puts it back correctly.",
+    "algorithm": "F' U L' U'",
+    "setupMoves": "U L U' F",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 0, 0, 0, 0, 1, 0]
+    }
+  },
+  {
+    "id": "cross-right-layer",
+    "name": "Edge from Right Layer",
+    "description": "Use when: A white edge is stuck in the middle layer on the right side. You can see the white sticker facing you on the right-side middle slot. This pulls it out and places it on the bottom cross.",
+    "algorithm": "R' D' R",
+    "setupMoves": "R' D R",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 0, 0, 1, 0, 0, 0]
+    }
+  },
+  {
+    "id": "cross-left-layer",
+    "name": "Edge from Left Layer",
+    "description": "Use when: A white edge is stuck in the middle layer on the left side. Mirror of the right-layer case. Pulls the edge out and places it on the bottom cross.",
+    "algorithm": "L D L'",
+    "setupMoves": "L D' L'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 1, 0, 0, 0, 0, 0]
+    }
+  }
+]

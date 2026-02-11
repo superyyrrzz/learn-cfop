@@ -1,0 +1,43 @@
+/* Mobile first — base styles are for small screens */
+
+/* Hamburger visible on mobile */
+@media (max-width: 639px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .hero__cube {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav__mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .step-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

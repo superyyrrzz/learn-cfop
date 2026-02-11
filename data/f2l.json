@@ -1,0 +1,57 @@
+[
+  {
+    "id": "f2l-basic-insert",
+    "name": "Basic Insert (Right)",
+    "description": "Use when: The white corner and its matching edge are both in the top layer and already next to each other (paired). The white sticker on the corner faces to the right. Simply insert the pair into the front-right slot with this 4-move sequence.",
+    "algorithm": "U R U' R'",
+    "setupMoves": "R U R' U'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 1, 0, 0, 0, 0, 0, 0]
+    }
+  },
+  {
+    "id": "f2l-basic-insert-left",
+    "name": "Basic Insert (Left)",
+    "description": "Use when: The corner and edge are paired in the top layer, but the white sticker on the corner faces left. Mirror of the right insert -- inserts the pair into the front-left slot.",
+    "algorithm": "U' L' U L",
+    "setupMoves": "L' U' L U",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+  },
+  {
+    "id": "f2l-split-pair",
+    "name": "Split and Pair (Right)",
+    "description": "Use when: The white corner and edge are both in the top layer but NOT paired -- they're separated. This algorithm moves them apart, then brings them back together in the right orientation before inserting. Watch for when the corner's white sticker faces upward and the edge is on the opposite side.",
+    "algorithm": "U' R U R' U R U' R'",
+    "setupMoves": "R U R' U' R U' R' U",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 1, 0, 0, 0, 0, 0, 0]
+    }
+  },
+  {
+    "id": "f2l-corner-in-slot",
+    "name": "Corner in Slot, Edge in Top",
+    "description": "Use when: The white corner is already sitting in its correct slot in the bottom layer (possibly twisted so white faces sideways), but the matching edge is still in the top layer. First pull the corner out (R U R'), then pair it with the edge and reinsert. This is longer but common in real solves.",
+    "algorithm": "R U R' U' R U R' U' R U R'",
+    "setupMoves": "R U' R' U R U' R' U R U' R'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 0, 0, 0, 0, 0, 0, 1]
+    }
+  },
+  {
+    "id": "f2l-edge-in-slot",
+    "name": "Edge in Slot, Corner in Top",
+    "description": "Use when: The edge is already in the correct slot in the middle layer, but the matching white corner is in the top layer. You need to take the edge out without disturbing other solved pairs, pair it with the corner, and reinsert both together.",
+    "algorithm": "U R U' R' U' F' U F",
+    "setupMoves": "F' U' F U R U R' U'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [0, 0, 1, 0, 0, 0, 0, 0, 0]
+    }
+  }
+]

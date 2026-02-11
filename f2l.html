@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F2L - Learn CFOP</title>
+  <meta name="description" content="Learn intuitive F2L (First Two Layers) for CFOP speedcubing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cube-viewer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Learn <span>CFOP</span></a>
+    <div class="nav__links">
+      <a href="cross.html" class="nav__link">Cross</a>
+      <a href="f2l.html" class="nav__link nav__link--active">F2L</a>
+      <a href="oll.html" class="nav__link">OLL</a>
+      <a href="pll.html" class="nav__link">PLL</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav__mobile-menu" id="mobile-menu">
+    <a href="cross.html" class="nav__link">Cross</a>
+    <a href="f2l.html" class="nav__link nav__link--active">F2L</a>
+    <a href="oll.html" class="nav__link">OLL</a>
+    <a href="pll.html" class="nav__link">PLL</a>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-header__title">F2L -- First Two Layers</h1>
+        <p class="page-header__description">
+          Pair corner and edge pieces and insert them into their slots.
+          Start with these basic cases, then develop intuition for all 41 cases.
+        </p>
+        <div class="progress-bar" style="margin-top: var(--space-md); max-width: 300px;">
+          <div class="progress-bar__fill" id="page-progress"></div>
+        </div>
+      </div>
+
+      <section class="step-guide">
+        <h2 class="step-guide__heading">When do I do this?</h2>
+        <p class="step-guide__text">
+          After the white cross is solved. You now have a white cross on the bottom with all four
+          edges matching their centers. The next goal is to fill in the four corner-edge pairs
+          (called "slots") that complete the bottom two layers. You'll repeat this process
+          <strong>four times</strong> -- once for each slot.
+        </p>
+        <h2 class="step-guide__heading">How do I recognize what to do?</h2>
+        <p class="step-guide__text">
+          Find a white corner piece in the top layer (it has white plus two other colors).
+          Then find the matching edge piece (the edge with those same two non-white colors).
+          Your job is to pair them together and insert them into the correct slot. Look at
+          <strong>where the white sticker faces</strong> on the corner and where the edge is
+          relative to the corner -- each combination below shows a different starting arrangement.
+        </p>
+        <h2 class="step-guide__heading">Tip</h2>
+        <p class="step-guide__text">
+          If a corner or edge is stuck in the wrong slot in the bottom two layers, do
+          <strong>R U R'</strong> (or the mirror) to pull it out to the top layer first, then solve
+          the pair normally.
+        </p>
+      </section>
+
+      <div class="card-grid" id="algorithm-list" data-step="f2l"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Learn CFOP &mdash; An interactive Rubik's cube tutorial</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

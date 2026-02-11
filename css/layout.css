@@ -1,0 +1,289 @@
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+}
+
+.nav__logo {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  margin-right: var(--space-2xl);
+  white-space: nowrap;
+}
+
+.nav__logo span {
+  color: var(--accent-primary);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.nav__link {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+}
+
+.nav__link--active {
+  color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.nav__hamburger {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-md);
+  flex-direction: column;
+  gap: var(--space-xs);
+  z-index: 99;
+}
+
+.nav__mobile-menu.open {
+  display: flex;
+}
+
+/* Main content */
+.main {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+  padding-bottom: var(--space-3xl);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Page header */
+.page-header {
+  margin-bottom: var(--space-lg);
+}
+
+.page-header__title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-sm);
+}
+
+.page-header__description {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  max-width: 640px;
+}
+
+/* Step guide (when/how sections on step pages) */
+.step-guide {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  max-width: 800px;
+}
+
+.step-guide__heading {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--accent-primary-hover);
+}
+
+.step-guide__heading:not(:first-child) {
+  margin-top: var(--space-lg);
+}
+
+.step-guide__text {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+.step-guide__text strong {
+  color: var(--text-primary);
+}
+
+.step-guide__list {
+  list-style: decimal;
+  padding-left: var(--space-xl);
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.step-guide__list li {
+  margin-bottom: var(--space-sm);
+}
+
+.step-guide__list strong {
+  color: var(--text-primary);
+}
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+/* Hero section (index page) */
+.hero {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--space-md);
+}
+
+.hero__title span {
+  color: var(--accent-primary);
+}
+
+.hero__subtitle {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__cube {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.hero__flow {
+  margin-bottom: var(--space-lg);
+}
+
+.hero__flow-text {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+/* Step cards on landing page */
+.step-cards {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  transition: all var(--transition-normal);
+  display: block;
+}
+
+.step-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-color-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-card__step-num {
+  font-size: var(--text-sm);
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.step-card__letter {
+  display: inline-block;
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.step-card__name {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.step-card__desc {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-surface);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: var(--accent-success);
+  border-radius: 3px;
+  transition: width var(--transition-normal);
+  width: 0%;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--space-3xl);
+}

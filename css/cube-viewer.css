@@ -1,0 +1,23 @@
+/* 3D cube viewer container */
+.cube-viewer {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 350px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: var(--space-md);
+}
+
+.cube-viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.cube-viewer--hero {
+  max-height: none;
+  aspect-ratio: auto;
+  width: 300px;
+  height: 300px;
+}

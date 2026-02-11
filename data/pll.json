@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pll-corners-t-perm",
+    "name": "T-Perm",
+    "description": "Use when: Two adjacent corners need to swap AND two adjacent edges need to swap (both on the same side). Look for a side where the two corner colors match ('headlights') but the edge between them is wrong. Hold that side facing you. One of the most important PLL algorithms.",
+    "algorithm": "R U R' U' R' F R2 U' R' U' R U R' F'",
+    "setupMoves": "F R U' R' U R U R2 F' R U R U' R'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    }
+  },
+  {
+    "id": "pll-corners-j-perm-a",
+    "name": "Ja-Perm",
+    "description": "Use when: Two adjacent corners need to swap and two adjacent edges need to swap (similar to T-perm but a different swap pattern). Look for a 1x1x3 solved block (three pieces in a row on one side). Hold the solved block on the LEFT side.",
+    "algorithm": "R' U L' U2 R U' R' U2 R L",
+    "setupMoves": "L' R' U2 R U R' U2 L U' R",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    }
+  },
+  {
+    "id": "pll-corners-y-perm",
+    "name": "Y-Perm",
+    "description": "Use when: No two adjacent corners share matching colors on ANY side (no headlights anywhere). This means the two corners that need to swap are DIAGONAL. Apply from any angle -- it swaps diagonal corners and fixes the edges.",
+    "algorithm": "F R U' R' U' R U R' F' R U R' U' R' F R F'",
+    "setupMoves": "F R' F' R U R U' R' F R U' R' U R U R' F'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    }
+  },
+  {
+    "id": "pll-edges-u-perm-a",
+    "name": "Ua-Perm",
+    "description": "Use when: All corners are solved (every side has matching corner colors) and three edges need to cycle CLOCKWISE. One side will be fully solved -- hold it at the BACK. The three visible front edges cycle to the right.",
+    "algorithm": "R U' R U R U R U' R' U' R2",
+    "setupMoves": "R2 U R U R' U' R' U' R' U R'",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    }
+  },
+  {
+    "id": "pll-edges-u-perm-b",
+    "name": "Ub-Perm",
+    "description": "Use when: All corners are solved and three edges need to cycle COUNTER-CLOCKWISE. One side will be fully solved -- hold it at the BACK. The three visible front edges cycle to the left. This is the mirror of Ua.",
+    "algorithm": "R2 U R U R' U' R' U' R' U R'",
+    "setupMoves": "R U' R U R U R U' R' U' R2",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    }
+  },
+  {
+    "id": "pll-edges-h-perm",
+    "name": "H-Perm",
+    "description": "Use when: All corners are solved but two PAIRS of opposite edges need to swap (front-back and left-right). Every side will show the edge color not matching its corners. Apply from any angle -- the pattern is symmetrical.",
+    "algorithm": "R2 U2 R U2 R2 U2 R2 U2 R U2 R2",
+    "setupMoves": "R2 U2 R' U2 R2 U2 R2 U2 R' U2 R2",
+    "tier": "beginner",
+    "recognition": {
+      "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+    }
+  }
+]

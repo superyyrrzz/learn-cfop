@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLL - Learn CFOP</title>
+  <meta name="description" content="Learn 2-look OLL algorithms for orienting the last layer in CFOP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cube-viewer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Learn <span>CFOP</span></a>
+    <div class="nav__links">
+      <a href="cross.html" class="nav__link">Cross</a>
+      <a href="f2l.html" class="nav__link">F2L</a>
+      <a href="oll.html" class="nav__link nav__link--active">OLL</a>
+      <a href="pll.html" class="nav__link">PLL</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav__mobile-menu" id="mobile-menu">
+    <a href="cross.html" class="nav__link">Cross</a>
+    <a href="f2l.html" class="nav__link">F2L</a>
+    <a href="oll.html" class="nav__link nav__link--active">OLL</a>
+    <a href="pll.html" class="nav__link">PLL</a>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-header__title">OLL -- Orient Last Layer</h1>
+        <p class="page-header__description">
+          Orient all yellow pieces on the top face. Start with 2-look OLL
+          (edges first, then corners) using just a few algorithms.
+        </p>
+        <div class="progress-bar" style="margin-top: var(--space-md); max-width: 300px;">
+          <div class="progress-bar__fill" id="page-progress"></div>
+        </div>
+      </div>
+
+      <section class="step-guide">
+        <h2 class="step-guide__heading">When do I do this?</h2>
+        <p class="step-guide__text">
+          After the first two layers (cross + four F2L pairs) are complete. The bottom two layers
+          are fully solved, and you're now working only on the yellow (top) layer.
+          The goal is to make the entire top face yellow -- the pieces don't need to be in the right
+          positions yet, just oriented so yellow faces up.
+        </p>
+        <h2 class="step-guide__heading">2-Look OLL: How it works</h2>
+        <p class="step-guide__text">
+          Instead of learning all 57 OLL cases, beginners use two steps:
+        </p>
+        <ol class="step-guide__list">
+          <li><strong>Step 1 -- Orient edges:</strong> Look at the top face. You'll see a dot (no edges yellow),
+          an L-shape (two adjacent edges yellow), or a line (two opposite edges yellow). Use the matching
+          algorithm to make a yellow cross on top. If you already have a cross, skip to step 2.</li>
+          <li><strong>Step 2 -- Orient corners:</strong> You now have a yellow cross. Look at how many corners
+          have yellow on top (0, 1, or 2). Match the pattern and apply the right algorithm. You may need
+          to rotate the top layer (U turns) so the pattern lines up before applying.</li>
+        </ol>
+        <h2 class="step-guide__heading">How do I recognize the pattern?</h2>
+        <p class="step-guide__text">
+          Hold the cube so you can see the top face. The thumbnail on each card shows which positions
+          should be yellow. Rotate the top layer (U moves) until your cube matches a thumbnail, then apply
+          that algorithm.
+        </p>
+      </section>
+
+      <div class="tier-toggle" id="tier-toggle">
+        <button class="tier-toggle__btn tier-toggle__btn--active" data-tier="beginner">2-Look OLL</button>
+        <button class="tier-toggle__btn" data-tier="full">Full OLL (57)</button>
+      </div>
+
+      <div class="card-grid" id="algorithm-list" data-step="oll"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Learn CFOP &mdash; An interactive Rubik's cube tutorial</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
