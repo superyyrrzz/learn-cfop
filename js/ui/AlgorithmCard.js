@@ -231,7 +231,7 @@ export class AlgorithmCard {
         }
       });
       row.el.addEventListener('click', () => {
-        this.controller.goToStep(row.end);
+        this.controller.playRange(row.start, row.end);
       });
     });
 

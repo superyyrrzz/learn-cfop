@@ -166,6 +166,44 @@ export class CubeController {
     this._notifyStep();
   }
 
+  /**
+   * Jump instantly to startStep, then animate through to endStep.
+   */
+  async playRange(startStep, endStep) {
+    if (this.isPlaying || this.animator.isAnimating) return;
+    startStep = Math.max(0, Math.min(startStep, this.moves.length));
+    endStep = Math.max(startStep, Math.min(endStep, this.moves.length));
+
+    // Jump to start instantly
+    if (startStep !== this.currentStep) {
+      this.model.reset();
+      if (this.setupMoves.length > 0) {
+        this.model.applyMoves(this.setupMoves, false);
+      }
+      for (let i = 0; i < startStep; i++) {
+        this.model.applyMove(this.moves[i], false);
+      }
+      this.renderer.resetCubies();
+      this.renderer.updateColors(this.model);
+      this.currentStep = startStep;
+      this._notifyStep();
+    }
+
+    // Animate from start to end
+    this.isPlaying = true;
+    this._playAbort = false;
+    this._notifyPlayState();
+
+    while (this.currentStep < endStep && !this._playAbort) {
+      await this._executeStep(this.moves[this.currentStep]);
+      this.currentStep++;
+      this._notifyStep();
+    }
+
+    this.isPlaying = false;
+    this._notifyPlayState();
+  }
+
   async _executeStep(move) {
     this.model.applyMove(move, false);
     await this.animator.animateMove(move);
