@@ -5,6 +5,10 @@
     "description": "Use when: No top-layer edges have yellow facing up -- you see only a yellow center dot. This is the worst edge case. Apply this to go directly to a yellow cross. Hold the cube in any orientation.",
     "algorithm": "F R U R' U' F' f R U R' U' f'",
     "setupMoves": "f U R U' R' f' F U R U' R' F'",
+    "steps": [
+      { "moves": 6, "label": "L-Shape: orient two adjacent edges into an L (same as L-Shape case)" },
+      { "moves": 6, "label": "Line to Cross: orient remaining two edges to complete the cross (same as Line case)" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 0, 0, 1, 0, 0, 0, 0]
@@ -16,6 +20,12 @@
     "description": "Use when: Exactly two adjacent edges have yellow on top, forming an L-shape (like a backward L in the back-left). Hold the cube so the two yellow edges point to the LEFT and BACK (9 o'clock position). Then apply this to get a full yellow cross.",
     "algorithm": "F R U R' U' F'",
     "setupMoves": "F U R U' R' F'",
+    "steps": [
+      { "moves": 1, "label": "Open the front face to expose the top layer" },
+      { "moves": 3, "label": "Sexy move (R U R'): cycle three edges to flip them" },
+      { "moves": 1, "label": "Undo the top setup turn" },
+      { "moves": 1, "label": "Close the front face to complete the cross" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 0, 1, 1, 0, 0, 1, 0]
@@ -27,6 +37,12 @@
     "description": "Use when: Exactly two opposite edges have yellow on top, forming a straight line. Hold the cube so the line runs LEFT to RIGHT (horizontal). Then apply this to get a full yellow cross.",
     "algorithm": "f R U R' U' f'",
     "setupMoves": "f U R U' R' f'",
+    "steps": [
+      { "moves": 1, "label": "Open with a wide front move (takes the middle slice too)" },
+      { "moves": 3, "label": "Sexy move (R U R'): cycle edges using the extra middle-slice freedom" },
+      { "moves": 1, "label": "Undo the top setup turn" },
+      { "moves": 1, "label": "Close the wide front to complete the cross" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 0, 1, 1, 1, 0, 0, 0]
@@ -38,6 +54,11 @@
     "description": "Use when: You have a yellow cross on top and exactly ONE corner has yellow on top. Hold the cube so the solved corner is in the FRONT-LEFT position. The classic 'Sune' algorithm orients the other three corners.",
     "algorithm": "R U R' U R U2 R'",
     "setupMoves": "R U2 R' U' R U' R'",
+    "steps": [
+      { "moves": 3, "label": "Lift the right layer to twist the first corner" },
+      { "moves": 1, "label": "Rotate top to bring the next corner into position" },
+      { "moves": 3, "label": "Double-turn twist (U2 R') to orient the remaining corners" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 1, 1, 1, 1, 1, 0, 1, 0]
@@ -49,6 +70,11 @@
     "description": "Use when: You have a yellow cross and exactly ONE corner has yellow on top, but the surrounding pattern is the mirror of Sune. Hold the solved corner in the FRONT-RIGHT. This is the reverse of Sune.",
     "algorithm": "R U2 R' U' R U' R'",
     "setupMoves": "R U R' U R U2 R'",
+    "steps": [
+      { "moves": 3, "label": "Double-turn lift (R U2 R') to start twisting corners" },
+      { "moves": 1, "label": "Rotate top to bring the next corner into position" },
+      { "moves": 3, "label": "Lower and twist to finish orienting all corners" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 0, 1, 1, 1, 0, 1, 0]
@@ -60,6 +86,14 @@
     "description": "Use when: You have a yellow cross and exactly TWO corners oriented, and they're on the SAME SIDE (adjacent). Hold the cube so the two solved corners are at the BACK. This fixes the front two corners.",
     "algorithm": "R2 D R' U2 R D' R' U2 R'",
     "setupMoves": "R U2 R D R' U2 R D' R2",
+    "steps": [
+      { "moves": 1, "label": "Open by rotating R twice to set up the bottom layer" },
+      { "moves": 2, "label": "Move a piece through the bottom layer (D R')" },
+      { "moves": 1, "label": "Double-turn top to twist corners (U2)" },
+      { "moves": 2, "label": "Return the piece through the bottom (R D')" },
+      { "moves": 1, "label": "Double-turn top again (U2) to finish twisting" },
+      { "moves": 2, "label": "Close by restoring the right side (R')" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 0, 1, 0]
@@ -71,6 +105,11 @@
     "description": "Use when: You have a yellow cross and exactly TWO corners oriented, but they're on DIAGONAL opposites (not the same side). Any holding angle works since the pattern is symmetrical.",
     "algorithm": "r U R' U' r' F R F'",
     "setupMoves": "F R' F' r U R U' r'",
+    "steps": [
+      { "moves": 3, "label": "Wide sexy move (r U R'): twist one diagonal corner using middle slice" },
+      { "moves": 1, "label": "Undo the top turn" },
+      { "moves": 4, "label": "Sledgehammer (r' F R F'): twist the opposite diagonal corner" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 0, 1, 1, 1, 0, 1, 1]
@@ -82,6 +121,10 @@
     "description": "Use when: You have a yellow cross but NO corners have yellow on top (all four corners are twisted). Apply Sune once -- this will give you a one-corner case, then apply Sune or Anti-Sune again to finish.",
     "algorithm": "R U R' U R U' R' U R U2 R'",
     "setupMoves": "R U2 R' U' R U R' U' R U' R'",
+    "steps": [
+      { "moves": 7, "label": "First Sune: orient three of the four twisted corners" },
+      { "moves": 4, "label": "Second pass: orient the last corner to complete the yellow face" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 1, 0, 1, 1, 1, 0, 1, 0]

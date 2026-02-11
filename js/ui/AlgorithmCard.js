@@ -146,11 +146,96 @@ export class AlgorithmCard {
     });
     this.body.appendChild(algDisplay);
 
+    // Step breakdown: map groups of moves to descriptions
+    const steps = this.data.steps || [];
+    this.stepRows = [];
+    if (steps.length > 0) {
+      const stepsEl = document.createElement('div');
+      stepsEl.className = 'alg-steps';
+      let moveIdx = 0;
+      steps.forEach((step) => {
+        const startIdx = moveIdx;
+        const endIdx = moveIdx + step.moves; // exclusive
+        moveIdx = endIdx;
+
+        const row = document.createElement('div');
+        row.className = 'alg-steps__row';
+
+        const movesText = document.createElement('span');
+        movesText.className = 'alg-steps__moves';
+        movesText.textContent = moves.slice(startIdx, endIdx).map(m => m.toString()).join(' ');
+
+        const label = document.createElement('span');
+        label.className = 'alg-steps__label';
+        label.textContent = step.label;
+
+        row.appendChild(movesText);
+        row.appendChild(label);
+        stepsEl.appendChild(row);
+        this.stepRows.push({ el: row, start: startIdx, end: endIdx });
+      });
+      this.body.appendChild(stepsEl);
+    }
+
     // Init controller
     this.controller = new CubeController(viewerEl);
     this.controller.loadAlgorithm(this.data.algorithm, this.data.setupMoves || '');
 
-    // Highlight current move
+    // Build move-to-step-row lookup
+    const moveToRow = new Array(moves.length).fill(null);
+    this.stepRows.forEach((row) => {
+      for (let i = row.start; i < row.end; i++) {
+        moveToRow[i] = row;
+      }
+    });
+
+    // Hover: highlight face on cube; Click: jump to step
+    // Also cross-highlight between move spans and step rows
+    moves.forEach((move, i) => {
+      const span = this.moveSpans[i];
+      span.addEventListener('mouseenter', () => {
+        this.controller.renderer.highlightFace(move.face);
+        const row = moveToRow[i];
+        if (row) {
+          row.el.classList.add('alg-steps__row--highlight');
+          for (let j = row.start; j < row.end; j++) {
+            this.moveSpans[j].classList.add('alg-display__move--group-highlight');
+          }
+        }
+      });
+      span.addEventListener('mouseleave', () => {
+        this.controller.renderer.clearHighlight();
+        const row = moveToRow[i];
+        if (row) {
+          row.el.classList.remove('alg-steps__row--highlight');
+          for (let j = row.start; j < row.end; j++) {
+            this.moveSpans[j].classList.remove('alg-display__move--group-highlight');
+          }
+        }
+      });
+      span.addEventListener('click', () => {
+        this.controller.goToStep(i + 1);
+      });
+    });
+
+    // Hover on step rows: highlight corresponding move spans and face
+    this.stepRows.forEach((row) => {
+      row.el.addEventListener('mouseenter', () => {
+        for (let j = row.start; j < row.end; j++) {
+          this.moveSpans[j].classList.add('alg-display__move--group-highlight');
+        }
+      });
+      row.el.addEventListener('mouseleave', () => {
+        for (let j = row.start; j < row.end; j++) {
+          this.moveSpans[j].classList.remove('alg-display__move--group-highlight');
+        }
+      });
+      row.el.addEventListener('click', () => {
+        this.controller.goToStep(row.end);
+      });
+    });
+
+    // Highlight current move + active step row
     this.controller.onStepChange = (current, total) => {
       this.moveSpans.forEach((span, i) => {
         span.classList.remove('alg-display__move--active', 'alg-display__move--done');
@@ -159,6 +244,12 @@ export class AlgorithmCard {
         } else if (i === current) {
           span.classList.add('alg-display__move--active');
         }
+      });
+      this.stepRows.forEach((row) => {
+        row.el.classList.toggle('alg-steps__row--active',
+          current >= row.start && current < row.end);
+        row.el.classList.toggle('alg-steps__row--done',
+          current >= row.end);
       });
     };
 

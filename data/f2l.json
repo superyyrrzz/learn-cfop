@@ -5,6 +5,12 @@
     "description": "Use when: The white corner and its matching edge are both in the top layer and already next to each other (paired). The white sticker on the corner faces to the right. Simply insert the pair into the front-right slot with this 4-move sequence.",
     "algorithm": "U R U' R'",
     "setupMoves": "R U R' U'",
+    "steps": [
+      { "moves": 1, "label": "Move the pair above the target slot" },
+      { "moves": 1, "label": "Open the slot by lifting the right layer" },
+      { "moves": 1, "label": "Slide the pair into position" },
+      { "moves": 1, "label": "Close the slot to lock the pair in" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 1, 0, 0, 0, 0, 0, 0]
@@ -16,6 +22,12 @@
     "description": "Use when: The corner and edge are paired in the top layer, but the white sticker on the corner faces left. Mirror of the right insert -- inserts the pair into the front-left slot.",
     "algorithm": "U' L' U L",
     "setupMoves": "L' U' L U",
+    "steps": [
+      { "moves": 1, "label": "Move the pair above the target slot" },
+      { "moves": 1, "label": "Open the slot by lifting the left layer" },
+      { "moves": 1, "label": "Slide the pair into position" },
+      { "moves": 1, "label": "Close the slot to lock the pair in" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -27,6 +39,12 @@
     "description": "Use when: The white corner and edge are both in the top layer but NOT paired -- they're separated. This algorithm moves them apart, then brings them back together in the right orientation before inserting. Watch for when the corner's white sticker faces upward and the edge is on the opposite side.",
     "algorithm": "U' R U R' U R U' R'",
     "setupMoves": "R U R' U' R U' R' U",
+    "steps": [
+      { "moves": 2, "label": "Separate corner from the edge" },
+      { "moves": 2, "label": "Bring the edge next to the corner to pair them" },
+      { "moves": 2, "label": "Move the paired pieces above the slot" },
+      { "moves": 2, "label": "Insert the pair into the slot" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 1, 0, 0, 0, 0, 0, 0]
@@ -38,6 +56,11 @@
     "description": "Use when: The white corner is already sitting in its correct slot in the bottom layer (possibly twisted so white faces sideways), but the matching edge is still in the top layer. First pull the corner out (R U R'), then pair it with the edge and reinsert. This is longer but common in real solves.",
     "algorithm": "R U R' U' R U R' U' R U R'",
     "setupMoves": "R U' R' U R U' R' U R U' R'",
+    "steps": [
+      { "moves": 3, "label": "Pull the corner out of its slot to the top layer" },
+      { "moves": 4, "label": "Reposition to pair the corner with its edge" },
+      { "moves": 4, "label": "Insert the paired corner and edge into the slot" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 0, 0, 0, 0, 0, 0, 1]
@@ -49,6 +72,10 @@
     "description": "Use when: The edge is already in the correct slot in the middle layer, but the matching white corner is in the top layer. You need to take the edge out without disturbing other solved pairs, pair it with the corner, and reinsert both together.",
     "algorithm": "U R U' R' U' F' U F",
     "setupMoves": "F' U' F U R U R' U'",
+    "steps": [
+      { "moves": 4, "label": "Move the corner down to take the edge out of its slot" },
+      { "moves": 4, "label": "Pair the corner and edge, then reinsert together" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [0, 0, 1, 0, 0, 0, 0, 0, 0]

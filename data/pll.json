@@ -5,6 +5,12 @@
     "description": "Use when: Two adjacent corners need to swap AND two adjacent edges need to swap (both on the same side). Look for a side where the two corner colors match ('headlights') but the edge between them is wrong. Hold that side facing you. One of the most important PLL algorithms.",
     "algorithm": "R U R' U' R' F R2 U' R' U' R U R' F'",
     "setupMoves": "F R U' R' U R U R2 F' R U R U' R'",
+    "steps": [
+      { "moves": 4, "label": "Sexy move (R U R' U'): set up the pieces for the swap" },
+      { "moves": 3, "label": "Break into F-slot (R' F R2): start the corner-edge swap" },
+      { "moves": 4, "label": "Reverse sexy move (U' R' U' R U): cycle pieces back" },
+      { "moves": 3, "label": "Close the F-slot (R' F'): complete both swaps" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -16,6 +22,12 @@
     "description": "Use when: Two adjacent corners need to swap and two adjacent edges need to swap (similar to T-perm but a different swap pattern). Look for a 1x1x3 solved block (three pieces in a row on one side). Hold the solved block on the LEFT side.",
     "algorithm": "R' U L' U2 R U' R' U2 R L",
     "setupMoves": "L' R' U2 R U R' U2 L U' R",
+    "steps": [
+      { "moves": 3, "label": "Cross-layer setup (R' U L'): bridge right and left layers" },
+      { "moves": 2, "label": "Double-turn swap (U2 R): start the corner exchange" },
+      { "moves": 3, "label": "Return and twist (U' R' U2): cycle the second corner" },
+      { "moves": 2, "label": "Close the bridge (R L): complete the permutation" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -27,6 +39,14 @@
     "description": "Use when: No two adjacent corners share matching colors on ANY side (no headlights anywhere). This means the two corners that need to swap are DIAGONAL. Apply from any angle -- it swaps diagonal corners and fixes the edges.",
     "algorithm": "F R U' R' U' R U R' F' R U R' U' R' F R F'",
     "setupMoves": "F R' F' R U R U' R' F R U' R' U R U R' F'",
+    "steps": [
+      { "moves": 1, "label": "Open the front face" },
+      { "moves": 6, "label": "Swap the first diagonal pair of pieces" },
+      { "moves": 1, "label": "Close the front face" },
+      { "moves": 1, "label": "Transition to the second swap" },
+      { "moves": 6, "label": "Swap the second diagonal pair to complete" },
+      { "moves": 2, "label": "Close and restore" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -38,6 +58,11 @@
     "description": "Use when: All corners are solved (every side has matching corner colors) and three edges need to cycle CLOCKWISE. One side will be fully solved -- hold it at the BACK. The three visible front edges cycle to the right.",
     "algorithm": "R U' R U R U R U' R' U' R2",
     "setupMoves": "R2 U R U R' U' R' U' R' U R'",
+    "steps": [
+      { "moves": 1, "label": "Start the edge cycle by lifting right" },
+      { "moves": 6, "label": "Cycle three edges clockwise around the top" },
+      { "moves": 4, "label": "Undo and close to lock edges in place" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -49,6 +74,11 @@
     "description": "Use when: All corners are solved and three edges need to cycle COUNTER-CLOCKWISE. One side will be fully solved -- hold it at the BACK. The three visible front edges cycle to the left. This is the mirror of Ua.",
     "algorithm": "R2 U R U R' U' R' U' R' U R'",
     "setupMoves": "R U' R U R U R U' R' U' R2",
+    "steps": [
+      { "moves": 1, "label": "Double-turn right to set up the cycle" },
+      { "moves": 6, "label": "Cycle three edges counter-clockwise around the top" },
+      { "moves": 4, "label": "Close and restore to lock edges in place" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -60,6 +90,12 @@
     "description": "Use when: All corners are solved but two PAIRS of opposite edges need to swap (front-back and left-right). Every side will show the edge color not matching its corners. Apply from any angle -- the pattern is symmetrical.",
     "algorithm": "R2 U2 R U2 R2 U2 R2 U2 R U2 R2",
     "setupMoves": "R2 U2 R' U2 R2 U2 R2 U2 R' U2 R2",
+    "steps": [
+      { "moves": 3, "label": "First half-swap: start exchanging one pair of opposite edges" },
+      { "moves": 2, "label": "Transition: rotate to target the second pair" },
+      { "moves": 3, "label": "Second half-swap: exchange the other pair of opposite edges" },
+      { "moves": 3, "label": "Restore: bring everything back into place" }
+    ],
     "tier": "beginner",
     "recognition": {
       "topPattern": [1, 1, 1, 1, 1, 1, 1, 1, 1]

@@ -148,6 +148,24 @@ export class CubeController {
     this.animator.setSpeed(speed);
   }
 
+  goToStep(targetStep) {
+    if (this.isPlaying || this.animator.isAnimating) return;
+    targetStep = Math.max(0, Math.min(targetStep, this.moves.length));
+    if (targetStep === this.currentStep) return;
+
+    this.model.reset();
+    if (this.setupMoves.length > 0) {
+      this.model.applyMoves(this.setupMoves, false);
+    }
+    for (let i = 0; i < targetStep; i++) {
+      this.model.applyMove(this.moves[i], false);
+    }
+    this.renderer.resetCubies();
+    this.renderer.updateColors(this.model);
+    this.currentStep = targetStep;
+    this._notifyStep();
+  }
+
   async _executeStep(move) {
     this.model.applyMove(move, false);
     await this.animator.animateMove(move);

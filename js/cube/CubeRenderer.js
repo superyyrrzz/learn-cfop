@@ -162,6 +162,39 @@ export class CubeRenderer {
     }
   }
 
+  highlightFace(faceName) {
+    this.clearHighlight();
+    const faceConfig = {
+      U: { pos: [0, 1.51, 0], rot: [-Math.PI / 2, 0, 0] },
+      D: { pos: [0, -1.51, 0], rot: [Math.PI / 2, 0, 0] },
+      F: { pos: [0, 0, 1.51], rot: [0, 0, 0] },
+      B: { pos: [0, 0, -1.51], rot: [0, Math.PI, 0] },
+      R: { pos: [1.51, 0, 0], rot: [0, Math.PI / 2, 0] },
+      L: { pos: [-1.51, 0, 0], rot: [0, -Math.PI / 2, 0] },
+    };
+    const cfg = faceConfig[faceName];
+    if (!cfg) return;
+    const geo = new THREE.PlaneGeometry(3.1, 3.1);
+    const mat = new THREE.MeshBasicMaterial({
+      color: 0x6366f1, opacity: 0.3, transparent: true,
+      side: THREE.DoubleSide, depthTest: false,
+    });
+    this._highlightMesh = new THREE.Mesh(geo, mat);
+    this._highlightMesh.position.set(...cfg.pos);
+    this._highlightMesh.rotation.set(...cfg.rot);
+    this._highlightMesh.renderOrder = 999;
+    this.scene.add(this._highlightMesh);
+  }
+
+  clearHighlight() {
+    if (this._highlightMesh) {
+      this.scene.remove(this._highlightMesh);
+      this._highlightMesh.geometry.dispose();
+      this._highlightMesh.material.dispose();
+      this._highlightMesh = null;
+    }
+  }
+
   /**
    * Update sticker colors from CubeModel state.
    * Maps 3D cubie positions to model face/index.

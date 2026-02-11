@@ -121,6 +121,15 @@
   padding: 2px 4px;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.alg-display__move:hover {
+  background: var(--bg-surface);
+}
+
+.alg-display__move--active:hover {
+  background: var(--accent-primary-hover);
 }
 
 .alg-display__move--active {
@@ -130,6 +139,63 @@
 
 .alg-display__move--done {
   color: var(--text-muted);
+}
+
+.alg-display__move--group-highlight {
+  background: rgba(99, 102, 241, 0.25);
+  color: var(--text-primary);
+}
+
+/* Step breakdown */
+.alg-steps {
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.alg-steps__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.alg-steps__row:last-child {
+  border-bottom: none;
+}
+
+.alg-steps__row:hover,
+.alg-steps__row--highlight {
+  background: var(--bg-card-hover);
+}
+
+.alg-steps__row--active {
+  background: rgba(99, 102, 241, 0.12);
+  border-left: 3px solid var(--accent-primary);
+  padding-left: calc(var(--space-md) - 3px);
+}
+
+.alg-steps__row--done {
+  opacity: 0.5;
+}
+
+.alg-steps__moves {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent-primary);
+  white-space: nowrap;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.alg-steps__label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
 /* Player controls */
