@@ -137,6 +137,7 @@ export class CubeController {
     }
 
     this.renderer.resetCubies();
+    this.renderer.resetView();
     this.renderer.updateColors(this.model);
     this._notifyStep();
   }

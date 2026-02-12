@@ -148,6 +148,13 @@ export class CubeRenderer {
    * Must be called before updateColors() whenever cubies may have accumulated
    * rotations from prior animations (e.g. in loadAlgorithm/reset).
    */
+  resetView() {
+    this.camera.position.set(4.5, 3.5, 4.5);
+    this.camera.lookAt(0, 0, 0);
+    this.controls.target.set(0, 0, 0);
+    this.controls.update();
+  }
+
   resetCubies() {
     for (const cubie of this.cubies) {
       cubie.mesh.position.set(
