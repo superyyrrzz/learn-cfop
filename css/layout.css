@@ -57,7 +57,18 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+
+.nav__github {
   margin-left: auto;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.nav__github:hover {
+  color: var(--text-primary);
 }
 
 .nav__hamburger span {
