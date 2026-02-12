@@ -6,10 +6,10 @@
     "algorithm": "U R U' R'",
     "setupMoves": "R U R' U'",
     "steps": [
-      { "moves": 1, "label": "Move the pair above the target slot" },
-      { "moves": 1, "label": "Open the slot by lifting the right layer" },
-      { "moves": 1, "label": "Slide the pair into position" },
-      { "moves": 1, "label": "Close the slot to lock the pair in" }
+      { "moves": 1, "label": "U: Rotate the top layer to position the white-red-green corner and its matching edge directly above the front-right slot" },
+      { "moves": 1, "label": "R: Lift the right layer — this opens the front-right slot, creating a gap for the corner-edge pair to slide into" },
+      { "moves": 1, "label": "U': Rotate the top layer back — the paired corner and edge now drop into the opened slot" },
+      { "moves": 1, "label": "R': Lower the right layer back — the slot closes, locking the white corner (white facing down) and the matching edge into the first layer" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -23,10 +23,10 @@
     "algorithm": "U' L' U L",
     "setupMoves": "L' U' L U",
     "steps": [
-      { "moves": 1, "label": "Move the pair above the target slot" },
-      { "moves": 1, "label": "Open the slot by lifting the left layer" },
-      { "moves": 1, "label": "Slide the pair into position" },
-      { "moves": 1, "label": "Close the slot to lock the pair in" }
+      { "moves": 1, "label": "U': Rotate the top layer to position the white-orange-green corner and its matching edge directly above the front-left slot" },
+      { "moves": 1, "label": "L': Lift the left layer — this opens the front-left slot, creating a gap for the pair" },
+      { "moves": 1, "label": "U: Rotate the top layer back — the paired corner and edge drop into the opened slot" },
+      { "moves": 1, "label": "L: Lower the left layer back — the slot closes, locking the white corner and matching edge into the first layer" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -40,10 +40,10 @@
     "algorithm": "U' R U R' U R U' R'",
     "setupMoves": "R U R' U' R U' R' U",
     "steps": [
-      { "moves": 2, "label": "Separate corner from the edge" },
-      { "moves": 2, "label": "Bring the edge next to the corner to pair them" },
-      { "moves": 2, "label": "Move the paired pieces above the slot" },
-      { "moves": 2, "label": "Insert the pair into the slot" }
+      { "moves": 2, "label": "U' R: Move the white corner away from the edge and lift the right layer — this separates the two pieces so they can be re-paired in the correct orientation" },
+      { "moves": 2, "label": "U R': Rotate the top to bring the edge next to the corner, then lower the right layer — the white corner and its matching colored edge are now paired with white facing the right side" },
+      { "moves": 2, "label": "U R: Rotate the top to position the paired pieces directly above the front-right slot, then lift to open the slot" },
+      { "moves": 2, "label": "U' R': Drop the pair into the slot and close — the white corner sits in the bottom with white facing down, and the edge colors match the front and right centers" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -57,9 +57,9 @@
     "algorithm": "R U R' U' R U R' U' R U R'",
     "setupMoves": "R U' R' U R U' R' U R U' R'",
     "steps": [
-      { "moves": 3, "label": "Pull the corner out of its slot to the top layer" },
-      { "moves": 4, "label": "Reposition to pair the corner with its edge" },
-      { "moves": 4, "label": "Insert the paired corner and edge into the slot" }
+      { "moves": 3, "label": "R U R': Pull the white corner out of its bottom-layer slot — it lifts to the top layer. The corner has white on it but it was twisted wrong in the slot (white facing sideways, not down)" },
+      { "moves": 4, "label": "U' R U R' U': Rotate the top layer to bring the matching colored edge next to the extracted corner, then re-pair them — the white sticker on the corner now faces the correct direction" },
+      { "moves": 4, "label": "R U R': Insert the now-paired corner and edge back into the front-right slot — white faces down on the bottom layer, and both side colors match their centers" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -73,8 +73,8 @@
     "algorithm": "U R U' R' U' F' U F",
     "setupMoves": "F' U' F U R U R' U'",
     "steps": [
-      { "moves": 4, "label": "Move the corner down to take the edge out of its slot" },
-      { "moves": 4, "label": "Pair the corner and edge, then reinsert together" }
+      { "moves": 4, "label": "U R U' R': Use the white corner from the top layer to push the matching edge out of its middle-layer slot — the corner moves down while the edge pops up to the top layer" },
+      { "moves": 4, "label": "U' F' U F: Rotate the top to align the edge with the corner, then insert both together through the front — the white corner lands with white facing down, and the edge colors match the front and right centers" }
     ],
     "tier": "beginner",
     "recognition": {

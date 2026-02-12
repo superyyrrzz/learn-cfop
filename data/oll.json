@@ -6,8 +6,8 @@
     "algorithm": "F R U R' U' F' f R U R' U' f'",
     "setupMoves": "f U R U' R' f' F U R U' R' F'",
     "steps": [
-      { "moves": 6, "label": "L-Shape: orient two adjacent edges into an L (same as L-Shape case)" },
-      { "moves": 6, "label": "Line to Cross: orient remaining two edges to complete the cross (same as Line case)" }
+      { "moves": 6, "label": "F R U R' U' F': Flip two yellow edge stickers to face up — after this, the four yellow edges go from a dot (no yellow showing) to an L-shape (two adjacent yellow edges facing up, forming a backward-L at back-left)" },
+      { "moves": 6, "label": "f R U R' U' f': Flip the remaining two yellow edges — the wide f move uses the middle slice to reach the two edges that still have yellow facing sideways, turning the L-shape into a full yellow cross" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -21,10 +21,10 @@
     "algorithm": "F R U R' U' F'",
     "setupMoves": "F U R U' R' F'",
     "steps": [
-      { "moves": 1, "label": "Open the front face to expose the top layer" },
-      { "moves": 3, "label": "Sexy move (R U R'): cycle three edges to flip them" },
-      { "moves": 1, "label": "Undo the top setup turn" },
-      { "moves": 1, "label": "Close the front face to complete the cross" }
+      { "moves": 1, "label": "F: Open the front face — this exposes the front and top edge stickers so they can be cycled" },
+      { "moves": 3, "label": "R U R': Cycle three top-layer edges — the two edges that had yellow facing sideways (front and right) get flipped so their yellow stickers now face up" },
+      { "moves": 1, "label": "U': Rotate the top layer back to realign the edges with their side colors" },
+      { "moves": 1, "label": "F': Close the front face — all four yellow edge stickers now face up, forming a complete yellow cross" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -38,10 +38,10 @@
     "algorithm": "f R U R' U' f'",
     "setupMoves": "f U R U' R' f'",
     "steps": [
-      { "moves": 1, "label": "Open with a wide front move (takes the middle slice too)" },
-      { "moves": 3, "label": "Sexy move (R U R'): cycle edges using the extra middle-slice freedom" },
-      { "moves": 1, "label": "Undo the top setup turn" },
-      { "moves": 1, "label": "Close the wide front to complete the cross" }
+      { "moves": 1, "label": "f: Wide front move (front + middle slice together) — this reaches the two opposite edges that have yellow facing sideways by also engaging the middle layer" },
+      { "moves": 3, "label": "R U R': Cycle the edges — the middle-slice involvement means the front and back edges (which have yellow facing the sides) get flipped so yellow now faces up" },
+      { "moves": 1, "label": "U': Rotate the top back to realign edge positions" },
+      { "moves": 1, "label": "f': Close the wide front — all four yellow edge stickers now face up, completing the yellow cross" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -55,9 +55,9 @@
     "algorithm": "R U R' U R U2 R'",
     "setupMoves": "R U2 R' U' R U' R'",
     "steps": [
-      { "moves": 3, "label": "Lift the right layer to twist the first corner" },
-      { "moves": 1, "label": "Rotate top to bring the next corner into position" },
-      { "moves": 3, "label": "Double-turn twist (U2 R') to orient the remaining corners" }
+      { "moves": 3, "label": "R U R': Lift the right layer and twist — this takes the front-right corner (which has yellow facing the front, not up) and rotates it so its yellow sticker moves toward the top face" },
+      { "moves": 1, "label": "U: Rotate the top layer to bring the next unoriented corner (back-right, with yellow facing the right side) into the front-right working position" },
+      { "moves": 3, "label": "R U2 R': Double-turn twist — this orients the remaining two corners (the one just brought in and the back-left corner) so all their yellow stickers now face up, completing the full yellow face" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -71,9 +71,9 @@
     "algorithm": "R U2 R' U' R U' R'",
     "setupMoves": "R U R' U R U2 R'",
     "steps": [
-      { "moves": 3, "label": "Double-turn lift (R U2 R') to start twisting corners" },
-      { "moves": 1, "label": "Rotate top to bring the next corner into position" },
-      { "moves": 3, "label": "Lower and twist to finish orienting all corners" }
+      { "moves": 3, "label": "R U2 R': Double-turn lift — takes the front-right corner (which has yellow facing the right side) and twists it so yellow begins rotating toward the top face" },
+      { "moves": 1, "label": "U': Rotate the top layer to bring the next unoriented corner into the front-right working position" },
+      { "moves": 3, "label": "R U' R': Twist and lower — orients the remaining corners so all their yellow stickers now face up, completing the full yellow face" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -87,12 +87,12 @@
     "algorithm": "R2 D R' U2 R D' R' U2 R'",
     "setupMoves": "R U2 R D R' U2 R D' R2",
     "steps": [
-      { "moves": 1, "label": "Open by rotating R twice to set up the bottom layer" },
-      { "moves": 2, "label": "Move a piece through the bottom layer (D R')" },
-      { "moves": 1, "label": "Double-turn top to twist corners (U2)" },
-      { "moves": 2, "label": "Return the piece through the bottom (R D')" },
-      { "moves": 1, "label": "Double-turn top again (U2) to finish twisting" },
-      { "moves": 2, "label": "Close by restoring the right side (R')" }
+      { "moves": 1, "label": "R2: Rotate the right layer 180° — this moves the two front corners (which have yellow facing sideways) into a position where they can be twisted through the bottom layer" },
+      { "moves": 2, "label": "D R': Send one corner through the bottom layer — the yellow sticker on this corner begins rotating from the side toward the top face" },
+      { "moves": 1, "label": "U2: Double-turn the top layer — this twist reorients the corner's yellow sticker so it now faces upward" },
+      { "moves": 2, "label": "R D': Bring the corner back up through the bottom and repeat the bottom-layer trick for the second front corner" },
+      { "moves": 1, "label": "U2: Second double-turn — orients the second corner so its yellow sticker also faces up" },
+      { "moves": 2, "label": "R': Restore the right layer — both front corners now have yellow facing up, matching the two back corners that were already solved" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -106,9 +106,9 @@
     "algorithm": "r U R' U' r' F R F'",
     "setupMoves": "F R' F' r U R U' r'",
     "steps": [
-      { "moves": 3, "label": "Wide sexy move (r U R'): twist one diagonal corner using middle slice" },
-      { "moves": 1, "label": "Undo the top turn" },
-      { "moves": 4, "label": "Sledgehammer (r' F R F'): twist the opposite diagonal corner" }
+      { "moves": 3, "label": "r U R': Wide move + twist — the wide r move takes the middle slice along with the right layer, which lets it reach the front-right corner. The corner's yellow sticker (currently facing the front) gets twisted toward the top face" },
+      { "moves": 1, "label": "U': Rotate top back to realign — prepares the diagonally opposite corner (back-left, with yellow also facing sideways) for the next step" },
+      { "moves": 4, "label": "r' F R F': Sledgehammer move — twists the back-left corner so its yellow sticker rotates from the side to face up. Both diagonal corners now have yellow on top, completing the full yellow face" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -122,8 +122,8 @@
     "algorithm": "R U R' U R U' R' U R U2 R'",
     "setupMoves": "R U2 R' U' R U R' U' R U' R'",
     "steps": [
-      { "moves": 7, "label": "First Sune: orient three of the four twisted corners" },
-      { "moves": 4, "label": "Second pass: orient the last corner to complete the yellow face" }
+      { "moves": 7, "label": "R U R' U R U' R' U R U2 R' (first 7): This is the Sune algorithm — all four corners have yellow facing sideways (none face up). Sune twists three of the four corners so their yellow stickers rotate to face upward, leaving exactly one corner still unoriented" },
+      { "moves": 4, "label": "R U2 R' (last 4): Now with only one corner left unsolved, this second pass twists the final corner so its yellow sticker faces up — completing the entire yellow face (all 9 yellow stickers visible on top)" }
     ],
     "tier": "beginner",
     "recognition": {

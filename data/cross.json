@@ -6,10 +6,10 @@
     "algorithm": "F2 D R' D'",
     "setupMoves": "D R D' F2",
     "steps": [
-      { "moves": 1, "label": "Flip edge from daisy down to bottom cross" },
-      { "moves": 1, "label": "Rotate bottom to open the next slot" },
-      { "moves": 1, "label": "Move the next edge out of the way" },
-      { "moves": 1, "label": "Restore bottom alignment" }
+      { "moves": 1, "label": "F2: Flip the white-green edge down from the yellow top to the white bottom — the white sticker lands on the white face and green faces the green center" },
+      { "moves": 1, "label": "D: Rotate the white (bottom) layer to move the solved edge out of the way, opening the front slot for the next edge" },
+      { "moves": 1, "label": "R': Bring the next white edge (currently on the right side) down toward the bottom layer" },
+      { "moves": 1, "label": "D': Rotate the bottom layer back so previously solved cross edges return to their correct positions" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -23,10 +23,10 @@
     "algorithm": "F' U L' U'",
     "setupMoves": "U L U' F",
     "steps": [
-      { "moves": 1, "label": "Pull the edge out of its slot" },
-      { "moves": 1, "label": "Move it aside on the top layer" },
-      { "moves": 1, "label": "Flip it into the correct orientation" },
-      { "moves": 1, "label": "Undo the top-layer turn to reinsert" }
+      { "moves": 1, "label": "F': Pull the white-green edge out of its bottom slot — it goes up to the top layer, but now the white and green stickers have swapped sides" },
+      { "moves": 1, "label": "U: Rotate the top layer to move the edge aside, clearing the front column" },
+      { "moves": 1, "label": "L': Tuck the edge into the left side — this flips it so the white sticker now faces the correct direction (outward instead of downward)" },
+      { "moves": 1, "label": "U': Undo the top rotation — the edge drops back into its original bottom slot, now with white facing the white center and green facing the green center" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -40,9 +40,9 @@
     "algorithm": "R' D' R",
     "setupMoves": "R' D R",
     "steps": [
-      { "moves": 1, "label": "Move the edge down out of the middle layer" },
-      { "moves": 1, "label": "Rotate bottom to align edge with its center" },
-      { "moves": 1, "label": "Restore the right side" }
+      { "moves": 1, "label": "R': Swing the right layer down — the white edge stuck in the middle-right slot drops out and moves to the bottom layer" },
+      { "moves": 1, "label": "D': Rotate the white (bottom) layer to align this edge underneath its matching colored center" },
+      { "moves": 1, "label": "R: Restore the right layer back up — the white edge is now locked into the cross with white facing down and the side color matching its center" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -56,9 +56,9 @@
     "algorithm": "L D L'",
     "setupMoves": "L D' L'",
     "steps": [
-      { "moves": 1, "label": "Move the edge down out of the middle layer" },
-      { "moves": 1, "label": "Rotate bottom to align edge with its center" },
-      { "moves": 1, "label": "Restore the left side" }
+      { "moves": 1, "label": "L: Swing the left layer down — the white edge stuck in the middle-left slot drops out and moves to the bottom layer" },
+      { "moves": 1, "label": "D: Rotate the white (bottom) layer to align this edge underneath its matching colored center" },
+      { "moves": 1, "label": "L': Restore the left layer back up — the white edge is now locked into the cross with white facing down and the side color matching its center" }
     ],
     "tier": "beginner",
     "recognition": {

@@ -6,10 +6,10 @@
     "algorithm": "R U R' U' R' F R2 U' R' U' R U R' F'",
     "setupMoves": "F R U' R' U R U R2 F' R U R U' R'",
     "steps": [
-      { "moves": 4, "label": "Sexy move (R U R' U'): set up the pieces for the swap" },
-      { "moves": 3, "label": "Break into F-slot (R' F R2): start the corner-edge swap" },
-      { "moves": 4, "label": "Reverse sexy move (U' R' U' R U): cycle pieces back" },
-      { "moves": 3, "label": "Close the F-slot (R' F'): complete both swaps" }
+      { "moves": 4, "label": "R U R' U': Setup — keeps yellow on top while moving the front-right corner and the right edge into position for the swap. Watch the two corner stickers that match on the front ('headlights') — they stay in place" },
+      { "moves": 3, "label": "R' F R2: Break into the front face — this disrupts the front-right corner and its adjacent edge, beginning the swap. The mismatched edge (between the headlights) starts moving to its correct position" },
+      { "moves": 4, "label": "U' R' U' R U: Cycle the pieces back through the top layer — the two corners that need to swap are now exchanging positions, and the two edges are also swapping" },
+      { "moves": 3, "label": "R' F': Close the front face — the two adjacent corners are now swapped and the two adjacent edges are swapped. Each side should now have all matching colors" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -23,10 +23,10 @@
     "algorithm": "R' U L' U2 R U' R' U2 R L",
     "setupMoves": "L' R' U2 R U R' U2 L U' R",
     "steps": [
-      { "moves": 3, "label": "Cross-layer setup (R' U L'): bridge right and left layers" },
-      { "moves": 2, "label": "Double-turn swap (U2 R): start the corner exchange" },
-      { "moves": 3, "label": "Return and twist (U' R' U2): cycle the second corner" },
-      { "moves": 2, "label": "Close the bridge (R L): complete the permutation" }
+      { "moves": 3, "label": "R' U L': Bridge the right and left layers — this reaches across to grab a corner from the left side and a corner from the right side simultaneously, starting the swap between them" },
+      { "moves": 2, "label": "U2 R: Double-turn the top and lift right — the first corner moves to its new position. Watch the side colors: the corner that was on the right is now traveling to the left" },
+      { "moves": 3, "label": "U' R' U2: Rotate top, lower right, double-turn again — the second corner completes its swap. The two adjacent edges also exchange positions during this sequence" },
+      { "moves": 2, "label": "R L: Close both layers together — the bridge is restored, locking both swapped corners and edges into their correct positions. The solved 1x1x3 block (three matching pieces) should now be on the left" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -40,12 +40,12 @@
     "algorithm": "F R U' R' U' R U R' F' R U R' U' R' F R F'",
     "setupMoves": "F R' F' R U R U' R' F R U' R' U R U R' F'",
     "steps": [
-      { "moves": 1, "label": "Open the front face" },
-      { "moves": 6, "label": "Swap the first diagonal pair of pieces" },
-      { "moves": 1, "label": "Close the front face" },
-      { "moves": 1, "label": "Transition to the second swap" },
-      { "moves": 6, "label": "Swap the second diagonal pair to complete" },
-      { "moves": 2, "label": "Close and restore" }
+      { "moves": 1, "label": "F: Open the front face — prepares to access the diagonal corners (front-right and back-left) that need to swap" },
+      { "moves": 6, "label": "R U' R' U' R U R': Twist sequence — swaps the front-right corner with the back-left corner diagonally. Watch the side sticker colors: corners that didn't match any neighbor now start pairing up" },
+      { "moves": 1, "label": "F': Close the front face — locks in the first diagonal corner swap" },
+      { "moves": 1, "label": "R: Transition — lifts the right layer to set up access to the edges that also need to swap" },
+      { "moves": 6, "label": "U R' U' R' F R F': Second swap sequence — fixes the edges that were disrupted by the corner swap. The front and right edges exchange positions so all four side colors now match" },
+      { "moves": 2, "label": "R' F R F': Close and restore — completes the permutation. Every side now has a uniform color with yellow still on top" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -59,9 +59,9 @@
     "algorithm": "R U' R U R U R U' R' U' R2",
     "setupMoves": "R2 U R U R' U' R' U' R' U R'",
     "steps": [
-      { "moves": 1, "label": "Start the edge cycle by lifting right" },
-      { "moves": 6, "label": "Cycle three edges clockwise around the top" },
-      { "moves": 4, "label": "Undo and close to lock edges in place" }
+      { "moves": 1, "label": "R: Lift the right layer — starts displacing the front-right edge so it can enter the clockwise cycle" },
+      { "moves": 6, "label": "U' R U R U R U' R' U': Cycle three edges clockwise — the front edge moves to the right side, the right edge moves to the left side, and the left edge moves to the front. Watch the edge sticker colors rotate one position to the right around the top" },
+      { "moves": 4, "label": "R2: Close and restore — locks all three edges into their new positions. Each side now has a matching color strip all the way across (corners + edge), solving the cube" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -75,9 +75,9 @@
     "algorithm": "R2 U R U R' U' R' U' R' U R'",
     "setupMoves": "R U' R U R U R U' R' U' R2",
     "steps": [
-      { "moves": 1, "label": "Double-turn right to set up the cycle" },
-      { "moves": 6, "label": "Cycle three edges counter-clockwise around the top" },
-      { "moves": 4, "label": "Close and restore to lock edges in place" }
+      { "moves": 1, "label": "R2: Double-turn the right layer — starts displacing the front-right edge so it can enter the counter-clockwise cycle" },
+      { "moves": 6, "label": "U R U R' U' R' U' R' U: Cycle three edges counter-clockwise — the front edge moves to the left side, the left edge moves to the right side, and the right edge moves to the front. Watch the edge sticker colors rotate one position to the left around the top" },
+      { "moves": 4, "label": "R': Close and restore — locks all three edges into their new positions. Each side now has a matching color strip all the way across, solving the cube" }
     ],
     "tier": "beginner",
     "recognition": {
@@ -91,10 +91,10 @@
     "algorithm": "R2 U2 R U2 R2 U2 R2 U2 R U2 R2",
     "setupMoves": "R2 U2 R' U2 R2 U2 R2 U2 R' U2 R2",
     "steps": [
-      { "moves": 3, "label": "First half-swap: start exchanging one pair of opposite edges" },
-      { "moves": 2, "label": "Transition: rotate to target the second pair" },
-      { "moves": 3, "label": "Second half-swap: exchange the other pair of opposite edges" },
-      { "moves": 3, "label": "Restore: bring everything back into place" }
+      { "moves": 3, "label": "R2 U2 R: Start the first edge swap — the front edge and back edge begin exchanging positions. Watch the front edge color disappear to the back and the back edge color come forward" },
+      { "moves": 2, "label": "U2 R2: Transition — rotate the top 180° and align the right layer. This pivots to target the left and right edges (the second pair that needs to swap)" },
+      { "moves": 3, "label": "U2 R2 U2: Swap the second pair — the left edge and right edge exchange positions. Now both pairs of opposite edges have been swapped" },
+      { "moves": 3, "label": "R U2 R2: Restore — bring the right layer back to its solved position. All four sides now have matching colors across corners and edges, solving the cube" }
     ],
     "tier": "beginner",
     "recognition": {
