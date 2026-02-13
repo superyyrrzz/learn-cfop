@@ -198,6 +198,22 @@
   line-height: 1.4;
 }
 
+.alg-steps__highlight-ref {
+  color: var(--accent-primary-hover);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 0 2px;
+  margin: 0 -2px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.alg-steps__highlight-ref:hover {
+  background: rgba(99, 102, 241, 0.2);
+  text-decoration-style: solid;
+}
+
 /* Player controls */
 .player-controls {
   display: flex;

@@ -5,6 +5,7 @@
 
 import { CubeController } from '../cube/CubeController.js';
 import { MoveParser } from '../cube/MoveParser.js';
+import { PieceHighlighter } from '../cube/PieceHighlighter.js';
 import { PatternDiagram } from './PatternDiagram.js';
 import { PlayerControls } from './PlayerControls.js';
 import { ProgressTracker } from './ProgressTracker.js';
@@ -167,7 +168,7 @@ export class AlgorithmCard {
 
         const label = document.createElement('span');
         label.className = 'alg-steps__label';
-        label.textContent = step.label;
+        this._renderLabelWithHighlights(label, step.label, step.highlights || [], startIdx);
 
         row.appendChild(movesText);
         row.appendChild(label);
@@ -237,6 +238,7 @@ export class AlgorithmCard {
 
     // Highlight current move + active step row
     this.controller.onStepChange = (current, total) => {
+      this.controller.renderer.clearStickerHighlights();
       this.moveSpans.forEach((span, i) => {
         span.classList.remove('alg-display__move--active', 'alg-display__move--done');
         if (i < current) {
@@ -257,6 +259,64 @@ export class AlgorithmCard {
     const controlsWrap = document.createElement('div');
     this.body.appendChild(controlsWrap);
     new PlayerControls(controlsWrap, this.controller);
+  }
+
+  _renderLabelWithHighlights(labelEl, text, highlights, stepStartMoveIndex) {
+    if (!highlights || highlights.length === 0) {
+      labelEl.textContent = text;
+      return;
+    }
+
+    // Find positions of each highlight text and sort by position
+    const positioned = highlights
+      .map(h => ({ ...h, pos: text.indexOf(h.text) }))
+      .filter(h => h.pos !== -1)
+      .sort((a, b) => a.pos - b.pos);
+
+    if (positioned.length === 0) {
+      labelEl.textContent = text;
+      return;
+    }
+
+    let cursor = 0;
+    for (const h of positioned) {
+      if (h.pos < cursor) continue; // overlapping, skip
+
+      // Plain text before this highlight
+      if (h.pos > cursor) {
+        labelEl.appendChild(document.createTextNode(text.slice(cursor, h.pos)));
+      }
+
+      // Highlight span
+      const span = document.createElement('span');
+      span.className = 'alg-steps__highlight-ref';
+      span.textContent = h.text;
+
+      span.addEventListener('mouseenter', () => {
+        if (this.controller.isPlaying || this.controller.animator.isAnimating) return;
+        const snapshot = this.controller.getModelAtMoveIndex(stepStartMoveIndex);
+        const stickers = PieceHighlighter.resolve(h, snapshot);
+        if (stickers.length > 0) {
+          this.controller.renderer.highlightStickers(stickers);
+        }
+      });
+
+      span.addEventListener('mouseleave', () => {
+        this.controller.renderer.clearStickerHighlights();
+      });
+
+      span.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      labelEl.appendChild(span);
+      cursor = h.pos + h.text.length;
+    }
+
+    // Remaining plain text
+    if (cursor < text.length) {
+      labelEl.appendChild(document.createTextNode(text.slice(cursor)));
+    }
   }
 
   dispose() {

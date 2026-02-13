@@ -150,6 +150,48 @@ export class CubeModel {
     return move;
   }
 
+  static EDGE_CUBIES = [
+    { faces: [['U',1],['B',1]] },  // UB
+    { faces: [['U',3],['L',1]] },  // UL
+    { faces: [['U',5],['R',1]] },  // UR
+    { faces: [['U',7],['F',1]] },  // UF
+    { faces: [['D',1],['F',7]] },  // DF
+    { faces: [['D',3],['L',7]] },  // DL
+    { faces: [['D',5],['R',7]] },  // DR
+    { faces: [['D',7],['B',7]] },  // DB
+    { faces: [['F',3],['L',5]] },  // FL
+    { faces: [['F',5],['R',3]] },  // FR
+    { faces: [['B',3],['R',5]] },  // BR
+    { faces: [['B',5],['L',3]] },  // BL
+  ];
+
+  static CORNER_CUBIES = [
+    { faces: [['U',0],['L',2],['B',0]] },  // ULB
+    { faces: [['U',2],['B',2],['R',0]] },  // UBR
+    { faces: [['U',6],['F',0],['L',0]] },  // UFL
+    { faces: [['U',8],['R',2],['F',2]] },  // URF
+    { faces: [['D',0],['L',6],['F',6]] },  // DLF
+    { faces: [['D',2],['F',8],['R',6]] },  // DFR
+    { faces: [['D',6],['B',6],['L',8]] },  // DBL
+    { faces: [['D',8],['R',8],['B',8]] },  // DBR
+  ];
+
+  findPiece(colors) {
+    const cubies = colors.length === 2
+      ? CubeModel.EDGE_CUBIES
+      : CubeModel.CORNER_CUBIES;
+    const sorted = [...colors].sort();
+    for (const cubie of cubies) {
+      const cubieColors = cubie.faces.map(([f, i]) => this.faces[f][i]);
+      const cubieColorsSorted = [...cubieColors].sort();
+      if (sorted.length === cubieColorsSorted.length &&
+          sorted.every((c, i) => c === cubieColorsSorted[i])) {
+        return { faces: cubie.faces, colors: cubieColors };
+      }
+    }
+    return null;
+  }
+
   isSolved() {
     for (const name of FACE_NAMES) {
       const f = this.faces[name];

@@ -132,9 +132,11 @@ export class CubeRenderer {
   }
 
   _addSticker(group, geometry, colorKey, position, rotation) {
-    const material = new THREE.MeshLambertMaterial({
+    const material = new THREE.MeshStandardMaterial({
       color: 0x888888, // Placeholder, updated by updateColors
       side: THREE.FrontSide,
+      roughness: 0.4,
+      metalness: 0.0,
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(...position);
@@ -292,6 +294,58 @@ export class CubeRenderer {
       const val = Math.round(pos[axis]);
       return val === layer;
     });
+  }
+
+  highlightStickers(stickers) {
+    this.clearStickerHighlights();
+    this._savedStickerProps = [];
+    const stickerSet = new Set(stickers.map(([f, i]) => `${f}:${i}`));
+
+    for (const cubie of this.cubies) {
+      const { mesh, x, y, z } = cubie;
+      const children = mesh.children.filter(c => c.userData.isSticker);
+      for (const sticker of children) {
+        const normal = new THREE.Vector3(0, 0, 1);
+        sticker.updateWorldMatrix(true, false);
+        const normalMatrix = new THREE.Matrix3().getNormalMatrix(sticker.matrixWorld);
+        normal.applyMatrix3(normalMatrix).normalize();
+
+        const nx = Math.round(normal.x);
+        const ny = Math.round(normal.y);
+        const nz = Math.round(normal.z);
+
+        let faceName, index;
+        if (nx === 1) { faceName = 'R'; index = this._posToIndex('R', x, y, z); }
+        else if (nx === -1) { faceName = 'L'; index = this._posToIndex('L', x, y, z); }
+        else if (ny === 1) { faceName = 'U'; index = this._posToIndex('U', x, y, z); }
+        else if (ny === -1) { faceName = 'D'; index = this._posToIndex('D', x, y, z); }
+        else if (nz === 1) { faceName = 'F'; index = this._posToIndex('F', x, y, z); }
+        else if (nz === -1) { faceName = 'B'; index = this._posToIndex('B', x, y, z); }
+
+        if (faceName !== undefined && index !== undefined) {
+          const key = `${faceName}:${index}`;
+          if (stickerSet.has(key)) {
+            this._savedStickerProps.push({
+              material: sticker.material,
+              emissive: sticker.material.emissive.getHex(),
+              emissiveIntensity: sticker.material.emissiveIntensity,
+            });
+            sticker.material.emissive.setHex(0x6366f1);
+            sticker.material.emissiveIntensity = 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  clearStickerHighlights() {
+    if (this._savedStickerProps) {
+      for (const saved of this._savedStickerProps) {
+        saved.material.emissive.setHex(saved.emissive);
+        saved.material.emissiveIntensity = saved.emissiveIntensity;
+      }
+      this._savedStickerProps = null;
+    }
   }
 
   resize() {

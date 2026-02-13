@@ -205,6 +205,17 @@ export class CubeController {
     this._notifyPlayState();
   }
 
+  getModelAtMoveIndex(moveIndex) {
+    const snapshot = new CubeModel();
+    if (this.setupMoves.length > 0) {
+      snapshot.applyMoves(this.setupMoves, false);
+    }
+    for (let i = 0; i < moveIndex && i < this.moves.length; i++) {
+      snapshot.applyMove(this.moves[i], false);
+    }
+    return snapshot;
+  }
+
   async _executeStep(move) {
     this.model.applyMove(move, false);
     await this.animator.animateMove(move);

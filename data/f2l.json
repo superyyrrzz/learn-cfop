@@ -6,10 +6,35 @@
     "algorithm": "U R U' R'",
     "setupMoves": "R U R' U'",
     "steps": [
-      { "moves": 1, "label": "U: Rotate the top layer to position the white-red-green corner and its matching edge directly above the front-right slot" },
-      { "moves": 1, "label": "R: Lift the right layer — this opens the front-right slot, creating a gap for the corner-edge pair to slide into" },
-      { "moves": 1, "label": "U': Rotate the top layer back — the paired corner and edge now drop into the opened slot" },
-      { "moves": 1, "label": "R': Lower the right layer back — the slot closes, locking the white corner (white facing down) and the matching edge into the first layer" }
+      {
+        "moves": 1,
+        "label": "U: Rotate the top layer to position the white-red-green corner and its matching edge directly above the front-right slot",
+        "highlights": [
+          { "text": "white-red-green corner", "type": "corner", "colors": ["white", "red", "green"] },
+          { "text": "front-right slot", "type": "slot", "slot": "FR" }
+        ]
+      },
+      {
+        "moves": 1,
+        "label": "R: Lift the right layer — this opens the front-right slot, creating a gap for the corner-edge pair to slide into",
+        "highlights": [
+          { "text": "front-right slot", "type": "slot", "slot": "FR" }
+        ]
+      },
+      {
+        "moves": 1,
+        "label": "U': Rotate the top layer back — the paired corner and edge now drop into the opened slot",
+        "highlights": [
+          { "text": "top layer", "type": "face", "face": "U" }
+        ]
+      },
+      {
+        "moves": 1,
+        "label": "R': Lower the right layer back — the slot closes, locking the white corner (white facing down) and the matching edge into the first layer",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] }
+        ]
+      }
     ],
     "tier": "beginner",
     "recognition": {
@@ -23,10 +48,35 @@
     "algorithm": "U' L' U L",
     "setupMoves": "L' U' L U",
     "steps": [
-      { "moves": 1, "label": "U': Rotate the top layer to position the white-orange-green corner and its matching edge directly above the front-left slot" },
-      { "moves": 1, "label": "L': Lift the left layer — this opens the front-left slot, creating a gap for the pair" },
-      { "moves": 1, "label": "U: Rotate the top layer back — the paired corner and edge drop into the opened slot" },
-      { "moves": 1, "label": "L: Lower the left layer back — the slot closes, locking the white corner and matching edge into the first layer" }
+      {
+        "moves": 1,
+        "label": "U': Rotate the top layer to position the white-orange-green corner and its matching edge directly above the front-left slot",
+        "highlights": [
+          { "text": "white-orange-green corner", "type": "corner", "colors": ["white", "orange", "green"] },
+          { "text": "front-left slot", "type": "slot", "slot": "FL" }
+        ]
+      },
+      {
+        "moves": 1,
+        "label": "L': Lift the left layer — this opens the front-left slot, creating a gap for the pair",
+        "highlights": [
+          { "text": "front-left slot", "type": "slot", "slot": "FL" }
+        ]
+      },
+      {
+        "moves": 1,
+        "label": "U: Rotate the top layer back — the paired corner and edge drop into the opened slot",
+        "highlights": [
+          { "text": "top layer", "type": "face", "face": "U" }
+        ]
+      },
+      {
+        "moves": 1,
+        "label": "L: Lower the left layer back — the slot closes, locking the white corner and matching edge into the first layer",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "orange", "green"] }
+        ]
+      }
     ],
     "tier": "beginner",
     "recognition": {
@@ -40,10 +90,36 @@
     "algorithm": "U' R U R' U R U' R'",
     "setupMoves": "R U R' U' R U' R' U",
     "steps": [
-      { "moves": 2, "label": "U' R: Move the white corner away from the edge and lift the right layer — this separates the two pieces so they can be re-paired in the correct orientation" },
-      { "moves": 2, "label": "U R': Rotate the top to bring the edge next to the corner, then lower the right layer — the white corner and its matching colored edge are now paired with white facing the right side" },
-      { "moves": 2, "label": "U R: Rotate the top to position the paired pieces directly above the front-right slot, then lift to open the slot" },
-      { "moves": 2, "label": "U' R': Drop the pair into the slot and close — the white corner sits in the bottom with white facing down, and the edge colors match the front and right centers" }
+      {
+        "moves": 2,
+        "label": "U' R: Move the white corner away from the edge and lift the right layer — this separates the two pieces so they can be re-paired in the correct orientation",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] }
+        ]
+      },
+      {
+        "moves": 2,
+        "label": "U R': Rotate the top to bring the edge next to the corner, then lower the right layer — the white corner and its matching colored edge are now paired with white facing the right side",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] },
+          { "text": "matching colored edge", "type": "edge", "colors": ["red", "green"] }
+        ]
+      },
+      {
+        "moves": 2,
+        "label": "U R: Rotate the top to position the paired pieces directly above the front-right slot, then lift to open the slot",
+        "highlights": [
+          { "text": "front-right slot", "type": "slot", "slot": "FR" }
+        ]
+      },
+      {
+        "moves": 2,
+        "label": "U' R': Drop the pair into the slot and close — the white corner sits in the bottom with white facing down, and the edge colors match the front and right centers",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] },
+          { "text": "front and right centers", "type": "sticker", "face": "F", "index": 4 }
+        ]
+      }
     ],
     "tier": "beginner",
     "recognition": {
@@ -57,9 +133,29 @@
     "algorithm": "R U R' U' R U R' U' R U R'",
     "setupMoves": "R U' R' U R U' R' U R U' R'",
     "steps": [
-      { "moves": 3, "label": "R U R': Pull the white corner out of its bottom-layer slot — it lifts to the top layer. The corner has white on it but it was twisted wrong in the slot (white facing sideways, not down)" },
-      { "moves": 4, "label": "U' R U R' U': Rotate the top layer to bring the matching colored edge next to the extracted corner, then re-pair them — the white sticker on the corner now faces the correct direction" },
-      { "moves": 4, "label": "R U R': Insert the now-paired corner and edge back into the front-right slot — white faces down on the bottom layer, and both side colors match their centers" }
+      {
+        "moves": 3,
+        "label": "R U R': Pull the white corner out of its bottom-layer slot — it lifts to the top layer. The corner has white on it but it was twisted wrong in the slot (white facing sideways, not down)",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] },
+          { "text": "front-right slot", "type": "slot", "slot": "FR" }
+        ]
+      },
+      {
+        "moves": 4,
+        "label": "U' R U R' U': Rotate the top layer to bring the matching colored edge next to the extracted corner, then re-pair them — the white sticker on the corner now faces the correct direction",
+        "highlights": [
+          { "text": "matching colored edge", "type": "edge", "colors": ["red", "green"] },
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] }
+        ]
+      },
+      {
+        "moves": 4,
+        "label": "R U R': Insert the now-paired corner and edge back into the front-right slot — white faces down on the bottom layer, and both side colors match their centers",
+        "highlights": [
+          { "text": "front-right slot", "type": "slot", "slot": "FR" }
+        ]
+      }
     ],
     "tier": "beginner",
     "recognition": {
@@ -73,8 +169,22 @@
     "algorithm": "U R U' R' U' F' U F",
     "setupMoves": "F' U' F U R U R' U'",
     "steps": [
-      { "moves": 4, "label": "U R U' R': Use the white corner from the top layer to push the matching edge out of its middle-layer slot — the corner moves down while the edge pops up to the top layer" },
-      { "moves": 4, "label": "U' F' U F: Rotate the top to align the edge with the corner, then insert both together through the front — the white corner lands with white facing down, and the edge colors match the front and right centers" }
+      {
+        "moves": 4,
+        "label": "U R U' R': Use the white corner from the top layer to push the matching edge out of its middle-layer slot — the corner moves down while the edge pops up to the top layer",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] },
+          { "text": "matching edge", "type": "edge", "colors": ["red", "green"] }
+        ]
+      },
+      {
+        "moves": 4,
+        "label": "U' F' U F: Rotate the top to align the edge with the corner, then insert both together through the front — the white corner lands with white facing down, and the edge colors match the front and right centers",
+        "highlights": [
+          { "text": "white corner", "type": "corner", "colors": ["white", "red", "green"] },
+          { "text": "front and right centers", "type": "sticker", "face": "F", "index": 4 }
+        ]
+      }
     ],
     "tier": "beginner",
     "recognition": {
